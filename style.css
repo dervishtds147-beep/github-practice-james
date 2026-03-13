@@ -1,262 +1,429 @@
 /* Reset and Base Styles */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:#f5f5f5;
-    color:#333;
-    line-height:1.6;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Header */
-
-header{
-    background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-    color:white;
-    text-align:center;
-    padding:2rem 1rem;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header h1{
-    font-size:2.5rem;
-    margin-bottom:0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 header p{
-    font-size:1.1rem;
-    opacity:0.9;
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
 
 /* Main Container */
-
-main{
-    max-width:1200px;
-    margin:2rem auto;
-    padding:0 1rem;
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Recipe Container */
-
-#recipe-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:1.5rem;
-    justify-content:center;
+/* Recipe Container - Flexbox Grid */
+#recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
 /* Recipe Card */
-
-.recipe-card{
-    background:white;
-    border-radius:12px;
-    box-shadow:0 4px 6px rgba(0,0,0,0.1);
-    padding:1.5rem;
-    width:300px;
+.recipe-card {
+    background: white ;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recipe-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 15px rgba(0,0,0,0.2);
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-/* Recipe Content */
-
-.recipe-card h3{
-    color:#667eea;
-    font-size:1.5rem;
-    margin-bottom:0.5rem;
+.recipe-card h3 {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.recipe-meta{
-    display:flex;
-    gap:1rem;
-    margin:0.75rem 0;
-    font-size:0.9rem;
-    color:#666;
+.recipe-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 0.75rem 0;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.recipe-card p{
-    color:#555;
-    line-height:1.5;
+.recipe-card p {
+    color: #555;
+    line-height: 1.5;
 }
 
-/* Difficulty Badge */
-
-.difficulty{
-    padding:0.25rem 0.75rem;
-    border-radius:20px;
-    font-size:0.85rem;
-    font-weight:bold;
+.difficulty {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
 }
 
-/* Easy */
-
-.difficulty.easy{
-    background-color:#d4edda;
-    color:#155724;
+.difficulty.easy {
+    /* TODO: Add green background and dark green text */
+    background-color: #d4edda;
+    color: #155724;
 }
 
-/* Medium */
-
-.difficulty.medium{
-    background:#fff3cd;
-    color:#856404;
+.difficulty.medium {
+    /* TODO: Add yellow background and dark yellow text */
+    /* Use: background #fff3cd, color #856404 */
+    background-color: #fff3cd;
+    color: #856404;
 }
 
-/* Hard */
-
-.difficulty.hard{
-    background:#f8d7da;
-    color:#721c24;
-}
-.controls{
-  text-align:center;
-  margin-bottom:20px;
+.difficulty.hard {
+    /* TODO: Add red background and dark red text */
+    /* Use: background #f8d7da, color #721c24 */
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
-.controls button{
-  padding:10px 15px;
-  margin:5px;
-  border:none;
-  background:#667eea;
-  color:white;
-  border-radius:5px;
-  cursor:pointer;
+/* Controls Section */
+.controls {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.controls button.active{
-  background:#333;
-}
-/* Card Actions */
-
-.card-actions{
-display:flex;
-gap:0.5rem;
-margin-top:1rem;
-padding-top:1rem;
-border-top:1px solid #eee;
+.filter-group,
+.sort-group {
+    margin-bottom: 1.5rem;
 }
 
-.toggle-btn{
-flex:1;
-padding:0.5rem 1rem;
-background:#f8f9fa;
-border:1px solid #dee2e6;
-border-radius:6px;
-cursor:pointer;
-font-size:0.9rem;
-transition:all 0.3s ease;
+.filter-group:last-child,
+.sort-group:last-child {
+    margin-bottom: 0;
 }
 
-.toggle-btn:hover{
-background:#e9ecef;
-border-color:#667eea;
+.controls h3 {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
 }
 
-/* Ingredients */
-
-.ingredients-container{
-display:none;
-margin-top:1rem;
-padding:1rem;
-background:#f8f9fa;
-border-radius:8px;
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
-.ingredients-container.visible{
-display:block;
+/* Filter and Sort Buttons */
+.filter-btn,
+.sort-btn {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.ingredients-container h4{
-color:#667eea;
-margin-bottom:0.75rem;
+.filter-btn:hover,
+.sort-btn:hover {
+    background: #f0f2ff;
+    transform: translateY(-2px);
 }
 
-.ingredients-container ul{
-list-style:none;
-padding:0;
+.filter-btn.active,
+.sort-btn.active {
+    background: #667eea;
+    color: white;
 }
 
-.ingredients-container li{
-padding:0.4rem 0;
-padding-left:1.5rem;
-position:relative;
+.filter-btn:active,
+.sort-btn:active {
+    transform: translateY(0);
 }
 
-.ingredients-container li::before{
-content:"✓";
-position:absolute;
-left:0;
-color:#667eea;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .filter-btn,
+    .sort-btn {
+        width: 100%;
+    }
 }
 
-/* Steps */
-
-.steps-container{
-display:none;
-margin-top:1rem;
-padding:1rem;
-background:#f0f8ff;
-border-radius:8px;
+/* Card Actions (Toggle Buttons) */
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
 }
 
-.steps-container.visible{
-display:block;
+.toggle-btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-.steps-list{
-list-style:none;
-counter-reset:step;
-padding:0;
+.toggle-btn:hover {
+    background: #e9ecef;
+    border-color: #667eea;
 }
 
-.steps-list > li{
-counter-increment:step;
-padding-left:2rem;
-margin:0.5rem 0;
-position:relative;
+.toggle-btn:active {
+    transform: scale(0.98);
 }
 
-.steps-list > li::before{
-content:counter(step);
-position:absolute;
-left:0;
-background:#667eea;
-color:white;
-width:1.4rem;
-height:1.4rem;
-border-radius:50%;
-font-size:0.8rem;
-display:flex;
-align-items:center;
-justify-content:center;
+/* Ingredients Container */
+.ingredients-container {
+    /* TODO: Set display to none (hidden by default) */
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: none;
 }
 
-/* Substeps */
-
-.substeps-list{
-list-style:none;
-padding-left:1.5rem;
-margin-top:0.5rem;
-border-left:2px solid #667eea;
+.ingredients-container.visible {
+    /* TODO: Set display to block (visible when toggled) */
+    display: block;
 }
 
-.substeps-list li{
-padding-left:1rem;
-margin:0.3rem 0;
-position:relative;
+.ingredients-container h4 {
+    color: #667eea;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
 }
 
-.substeps-list li::before{
-content:"→";
-position:absolute;
-left:0;
-color:#667eea;
+.ingredients-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients-container li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.ingredients-container li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Steps Container */
+.steps-container {
+    /* TODO: Set display to none (hidden by default) */
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f0f8ff;
+    border-radius: 8px;
+    display: none;
+}
+
+.steps-container.visible {
+    /* TODO: Set display to block (visible when toggled) */
+    display: block;
+}
+
+.steps-container h4 {
+    color: #667eea;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Steps List */
+.steps-list {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+}
+
+.steps-list > li {
+    counter-increment: step-counter;
+    padding: 0.6rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.steps-list > li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Nested substeps */
+.substeps-list {
+    /* TODO: Add styles for nested list */
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    border-left: 2px solid #667eea;
+}
+
+.substeps-list li {
+    padding: 0.4rem 0;
+    padding-left: 1rem;
+    position: relative;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.substeps-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+}
+
+/* Even deeper nesting */
+.substeps-list .substeps-list {
+    border-left-color: #9aa5ea;
+    padding-left: 1rem;
+}
+
+.substeps-list .substeps-list li {
+    font-size: 0.85rem;
+}
+
+/* Search Container */
+.search-container {
+    max-width: 500px;
+    margin: 1.5rem auto 0;
+    position: relative;
+}
+
+#search-input {
+    /* TODO: Style with full width, padding, rounded corners */
+    /* Hint: padding-right should be larger (for clear button) */
+    width: 100%;
+    padding: 13px;
+    border-radius: 20px;
+    border:none;
+}
+
+#search-input:focus {
+    /* TODO: Remove outline, add box-shadow */
+    outline: none;
+    box-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+
+.clear-btn {
+    /* TODO: Position absolute, right side, vertically centered */
+    /* Hint: Use position: absolute, right: 10px, top: 50%, transform: translateY(-50%) */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Recipe Counter */
+.recipe-info {
+    /* TODO: Center text, add margin */
+    align-items: center;
+    margin:30px;
+}
+
+/* Favorite Button on Cards */
+.favorite-btn {
+    /* TODO: Position in top-right corner of card */
+    /* Hint: position: absolute, top: 1rem, right: 1rem */
+    /* Don't forget to add position: relative to .recipe-card */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.recipe-card{
+    position: relative;
+}
+
+.favorite-btn:hover {
+    /* TODO: Scale up slightly */
+    transform: scale(1.5,1.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* slightly smaller */
+    }
+    
+    .search-container {
+        margin: 1rem auto; /* reduce top margin for smaller screens */
+    }
+    
+    .recipe-card {
+        width: 90%; /* almost full width on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .button-group {
+        flex-direction: column; /* stack buttons vertically */
+        gap: 0.5rem; /* smaller gap */
+    }
+    
+    .filter-btn,
+    .sort-btn {
+        width: 100%; /* full width buttons */
+    }
+
+    header p {
+        font-size: 0.95rem; /* adjust subtitle text */
+    }
+
+    .recipe-card {
+        padding: 1rem; /* smaller padding for small screens */
+    }
 }
