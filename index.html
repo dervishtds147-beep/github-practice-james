@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecipeJS - Your Functional Cooking Companion</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecipeJS - Your Functional Cooking Companion</title>
 
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <h1>🍳 RecipeJS</h1>
-        <p>Your Functional Cooking Companion</p>
-    </header>
+<header>
+<h1>🍳 RecipeJS</h1>
+<p>Your Functional Cooking Companion</p>
+</header>
 
-    <!-- Main Section -->
-    <main>
-        <div id="recipe-container">
-            <!-- Recipe cards will be rendered here by JavaScript -->
-        </div>
-    </main>
-    <section class="controls">
+<main>
 
-  <div class="filter-buttons">
-    <button data-filter="all" class="active">Show All</button>
-    <button data-filter="easy">Easy</button>
-    <button data-filter="medium">Medium</button>
-    <button data-filter="hard">Hard</button>
-    <button data-filter="quick">Quick Recipes</button>
-  </div>
+<section class="controls">
 
-  <div class="sort-buttons">
-    <button data-sort="none" class="active">Default</button>
-    <button data-sort="name">Name (A-Z)</button>
-    <button data-sort="time">Time (Fastest)</button>
-  </div>
+<div class="filter-buttons">
+<button class="filter-btn active" data-filter="all">Show All</button>
+<button class="filter-btn" data-filter="easy">Easy</button>
+<button class="filter-btn" data-filter="medium">Medium</button>
+<button class="filter-btn" data-filter="hard">Hard</button>
+<button class="filter-btn" data-filter="quick">Quick Recipes</button>
+</div>
+
+<div class="sort-buttons">
+<button class="sort-btn active" data-sort="none">Default</button>
+<button class="sort-btn" data-sort="name">Name (A-Z)</button>
+<button class="sort-btn" data-sort="time">Time (Fastest)</button>
+</div>
 
 </section>
 
-    <!-- JavaScript File -->
-    <script src="app.js"></script>
+<div id="recipe-container"></div>
+
+</main>
+
+<script src="app.js"></script>
 
 </body>
 </html>
